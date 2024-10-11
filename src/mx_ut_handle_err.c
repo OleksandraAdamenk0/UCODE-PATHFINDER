@@ -22,7 +22,9 @@ static void handle_firstline_error(void) {
 
 static void handle_line_error(int line) {
     mx_printerr("error: line ");
-    mx_printerr(mx_itoa(line));
+    char *linestr = mx_itoa(line);
+    mx_printerr(linestr);
+    free(linestr);
     mx_printerr(" is not valid\n");
 }
 
